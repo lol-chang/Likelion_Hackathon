@@ -3,8 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Main</title>
+
 </head>
+
 <body>
     session 값 확인: <p th:text="${session.loginId}"></p>
-</body>
-</html>
+
+
+
+//클라이언트 클릭하면 서버로 통신
+    <h1>Click the button to send data to the server</h1>
+    <button id="sendDataButton">Send Data</button>
+
+    <script>
+        document.getElementById('sendDataButton').addEventListener('click', function () {
+                    // 클라이언트에서 서버로 데이터를 전송합니다.
+                    sendDataToServer();
+                });
+
+                function sendDataToServer() {
+                    // 자바스크립트 AJAX 요청을 사용하여 서버로 데이터 전송
+                    const xhr = new XMLHttpRequest();
+                    const url = '/test'; // 스프링 컨트롤러의 "/test" 경로로 요청을 보냅니다.
+                    const data = { value: 1 }; // 전송할 데이터 (JSON 형식)
+
+                    xhr.open('POST', url, true);
+                    xhr.setRequestHeader('Content-Type', 'application/json');
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                            console.log('Data sent to server:', data);
+                            console.log('Server response:', xhr.responseText);
+                        }
+                    };
+
+                    xhr.send(JSON.stringify(data));
+                }
+            </script>
+        </body>
+        </html>
+
+

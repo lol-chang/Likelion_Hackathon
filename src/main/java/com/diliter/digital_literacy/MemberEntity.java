@@ -22,12 +22,16 @@ public class MemberEntity {
     @Column
     private String memberPassword;
 
+    @Column
+    public int memberX;
+
     public static MemberEntity toMemberEntity(MemberDto memberDto){
         MemberEntity memberEntity = new MemberEntity();
+        memberEntity.setId(memberDto.getId());
         memberEntity.setMemberName(memberDto.getMemberName());
         memberEntity.setMemberId(memberDto.getMemberID());
         memberEntity.setMemberPassword(memberDto.getMemberPassword());
-
+        memberEntity.setMemberX(memberDto.getMemberX());
         return memberEntity;
     }
 }
