@@ -40,7 +40,7 @@ public class HomeController {
         MemberDto loginResult = memberService.login(memberDto);
 
         if (loginResult != null) {
-            session.setAttribute("loginId", loginResult.getMemberID());
+            session.setAttribute("loginResult", loginResult);
 
 
 //            loginResult.setMemberX(loginResult.getMemberX()+20);
@@ -67,14 +67,15 @@ public class HomeController {
     @ResponseBody
     public String receiveDataFromClient(@RequestBody String dataFromClient, HttpSession session) {
         System.out.println("Data received from client: " + dataFromClient);
-//        MemberDto loginResult = (MemberDto) session.getAttribute("loginId"); // 세션에서 loginResult를 가져옴
-//        System.out.println("_______LoginResult : " + loginResult);
-//        if (loginResult != null) {
-//            loginResult.setMemberX(loginResult.getMemberX() + 20);
-//            MemberEntity memberEntity = MemberEntity.toMemberEntity(loginResult);
-//            memberService.updateMember(memberEntity);
-//        }
+        MemberDto loginResult = (MemberDto) session.getAttribute("loginResult"); // 세션에서 MemberDto를 가져옴
+        System.out.println("_______LoginResult : " + loginResult);
+        if (loginResult != null) {
+            loginResult.setMemberX(loginResult.getMemberX() + 20);
+            MemberEntity memberEntity = MemberEntity.toMemberEntity(loginResult);
+            memberService.updateMember(memberEntity);
+        }
         return "Data received";
     }
+
 
 }
