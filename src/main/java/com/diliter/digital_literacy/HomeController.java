@@ -13,7 +13,7 @@ import java.lang.reflect.Member;
 public class HomeController {
     private final MemberService memberService;
 
-    @GetMapping("/")
+    @GetMapping("/main")
     public String index() {
         return "main.html";
     }

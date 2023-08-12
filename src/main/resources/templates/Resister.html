@@ -1,15 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <title>회원가입</title>
+    <link rel="stylesheet" type="text/css" href="resister.css">
 </head>
 <body>
-<form action="/resister" method="post">
-    이름 : <input type="text" name="memberName"> <br>
-    아이디 :<input type="text" name="memberID"> <br>
-    비밀번호 :<input type="password" name="memberPassword"> <br>
-    <input type="submit" value="회원가입">
-</form>
+<header>
+    <h1 class="top1">고민그잡채</h1>
+    <nav class="menu">
+        <a href="http://localhost:8080/login">로그인</a>
+        <a href="http://localhost:8080/resister">회원가입</a>
+        <a href="#">강의</a>
+        <a href="#">수료증</a>
+    </nav>
+</header>
+<div class="container">
+    <form action="/resister" method="post">
+        <h1>회원가입</h1>
+        <label for="memberName">이름</label>
+        <input type="text" id="memberName" name="memberName">
+        <label for="memberID">아이디</label>
+        <input type="text" id="memberID" name="memberID">
+        <label for="memberPassword">비밀번호</label>
+        <input type="password" id="memberPassword" name="memberPassword">
+        <input type="submit" value="회원가입">
+    </form>
+</div>
 </body>
 </html>

@@ -1,21 +1,34 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Main</title>
-
+    <title>고민그잡채</title>
+    <link rel="stylesheet" href="main.css">
 </head>
-
 <body>
-    session 값 확인: <p th:text="${session.loginId}"></p>
+<header>
 
-
-
+    <h1>고민그잡채</h1>
+    <nav class="menu">
+        <a href="http://localhost:8080/login">로그인</a>
+        <a href="http://localhost:8080/resister">회원가입</a>
+        <a href="#">강의</a>
+        <a href="#">수료증</a>
+    </nav>
+</header>
+<div class="container">
+    <div class="quarter0"><a href="http://localhost:8080/login" class="text">로그인</a></div>
+    <div class="quarter1"><a href="http://localhost:8080/resister" class="text">회원가입</a></div>
+    <div class="quarter2"><a href="#"class="text">강의</a></div>
+    <div class="quarter3"><a href="#"class="text">수료증</a></div>
+</div>
+<!--
 //클라이언트 클릭하면 서버로 통신
-    <h1>Click the button to send data to the server</h1>
-    <button id="sendDataButton">Send Data</button>
+session 값 확인: <p th:text="${session.loginId}"></p>
+<h1>Click the button to send data to the server</h1>
+<button id="sendDataButton">Send Data</button>
 
-    <script>
+<script>
         document.getElementById('sendDataButton').addEventListener('click', function () {
                     // 클라이언트에서 서버로 데이터를 전송합니다.
                     sendDataToServer();
@@ -39,7 +52,6 @@
                     xhr.send(JSON.stringify(data));
                 }
             </script>
-        </body>
-        </html>
-
-
+-->
+</body>
+</html>
