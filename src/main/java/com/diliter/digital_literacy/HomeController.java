@@ -8,6 +8,12 @@ import com.diliter.digital_literacy.MemberDto;
 
 import java.lang.reflect.Member;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import java.util.List;
+
 @Controller
 @RequiredArgsConstructor
 public class HomeController {
@@ -40,19 +46,19 @@ public class HomeController {
         MemberDto loginResult = memberService.login(memberDto);
 
         if (loginResult != null) {
+            // 로그인 성공 시 회원 이름도 저장
+            MemberEntity member = memberRepository.findByMemberId(loginResult.getMemberID()).orElse(null);
+            if (member != null) {
+                loginResult.setMemberName(member.getMemberName());
+            }
+
             session.setAttribute("loginResult", loginResult);
-
-
-//            loginResult.setMemberX(loginResult.getMemberX()+20);
-//            MemberEntity memberEntity = MemberEntity.toMemberEntity(loginResult);
-//            memberService.updateMember(memberEntity);
-
             return "main.html";
-        }
-        else {
+        } else {
             return "Login.html";
         }
     }
+
 
 
 
@@ -75,6 +81,29 @@ public class HomeController {
             memberService.updateMember(memberEntity);
         }
         return "Data received";
+    }
+
+
+    @Autowired
+    private MemberRepository memberRepository;
+
+    @GetMapping("/name")
+    public String displayMemberName(HttpSession session, Model model) {
+        MemberDto loginResult = (MemberDto) session.getAttribute("loginResult");
+        System.out.println("NAME: " + loginResult.getMemberName());
+
+        if (loginResult != null) {
+            String memberName = loginResult.getMemberName();
+            model.addAttribute("memberName", memberName);
+        }
+
+        return "name";
+    }
+
+
+    @GetMapping("/lecture")
+    public String studyLecture() {
+        return "lecture.html";
     }
 
 
