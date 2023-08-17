@@ -7,7 +7,11 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
+    background-image: url('https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxODAxMjNfMTQg%2FMDAxNTE2NjM3Nzc3NTk2.Vj0nuLYwYR_O34nWR05IakHNOydPO3vXX_jVKhaIu3Ig.PcyHYiHN7jPjVRmtqPqI0_C7wtWyQAQHiWLz6RE2LhYg.PNG.kbs4674%2F%25B8%25DA%25C0%25EF%25C0%25CC_%25BB%25E7%25C0%25DA%25C3%25B3%25B7%25B3.png&type=a340');
+    background-size: cover;
+    background-position: center;
 }
+
 
 header {
     display: flex;
@@ -42,7 +46,7 @@ a {
     align-items: center;
     height: calc(100vh - 70px); /* 화면 높이에서 상단바 높이를 뺀 값 */
     font-size: 20px;
-    background-color: #f0f0f0;
+    background-color: transparent;
 }
 
 form {
@@ -83,3 +87,53 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #0056b3;
 }
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 70px);
+    font-size: 24px;
+    background-color: transparent;
+}
+
+.quarter {
+    width: 25%;
+    text-align: center;
+}
+
+.quarter a {
+    display: block;
+    padding: 20px;
+    background-color: #fff;
+    text-decoration: none;
+    color: #333;
+    border-radius: 5px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.quarter a:hover {
+    background-color: #ffcc00;
+    transform: translateY(-5px);
+}
+
+.container2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: calc(100% - 40px); /* 컨테이너 가로 전체 너비에서 여백을 뺀 크기 */
+            max-width: 800px; /* 최대 너비 설정 */
+            margin: 10px auto; /* 중앙 정렬 및 상하 여백 조절 */
+            font-size: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .container2 p {
+            margin: 10px 0;
+        }

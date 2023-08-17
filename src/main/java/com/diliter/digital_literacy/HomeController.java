@@ -97,7 +97,7 @@ public class HomeController {
             model.addAttribute("memberName", memberName);
         }
 
-        return "name";
+        return "name.html";
     }
 
 
@@ -105,6 +105,12 @@ public class HomeController {
     public String studyLecture() {
         return "lecture.html";
     }
+
+    @GetMapping("/quiz")
+    public String quizPlay() {
+        return "quiz.html";
+    }
+
 
 
 }
