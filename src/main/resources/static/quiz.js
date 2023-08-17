@@ -5,30 +5,30 @@ const questions = [
       options: ["정부24", "네이버", "멋쟁이사자처럼"],
       correctOption: 0
     },
-//    {
-//      question: "다음 중 민원을 신청할 수 있는 사이트는 어디인가요?",
-//      imageUrl: "",
-//      options: ["다음", "맥도날드", "국민신문고"],
-//      correctOption: 2
-//    },
-//    {
-//        question: "현재 시행하고 있는 공공 정책지원들을 검색하려면 네이버에 뭐라고 검색을 해야 할까요?",
-//        imageUrl: "",
-//        options: ["서비스", "공공서비스", "공공보건포털"],
-//        correctOption: 1
-//      },
-//      {
-//        question: "다음중 네이버 공공서비스 정책지원에서 골라 볼수 있는 목록이 아닌것은 무엇일까요?",
-//        imageUrl: "",
-//        options: ["소관기관", "분야별", "성별"],
-//        correctOption: 2
-//      },
-//      {
-//        question: "네이버 길찾기에서 자세한 경로를 확인하려면 눌러야 하는 버튼은 무엇일까요?",
-//        imageUrl: "",
-//        options: ["다시입력", "상세보기", "다시입력"],
-//        correctOption: 1
-//      },
+    {
+      question: "다음 중 민원을 신청할 수 있는 사이트는 어디인가요?",
+      imageUrl: "",
+      options: ["다음", "맥도날드", "국민신문고"],
+      correctOption: 2
+    },
+    {
+        question: "현재 시행하고 있는 공공 정책지원들을 검색하려면 네이버에 뭐라고 검색을 해야 할까요?",
+        imageUrl: "",
+        options: ["서비스", "공공서비스", "공공보건포털"],
+        correctOption: 1
+      },
+      {
+        question: "다음중 네이버 공공서비스 정책지원에서 골라 볼수 있는 목록이 아닌것은 무엇일까요?",
+        imageUrl: "",
+        options: ["소관기관", "분야별", "성별"],
+        correctOption: 2
+      },
+      {
+        question: "네이버 길찾기에서 자세한 경로를 확인하려면 눌러야 하는 버튼은 무엇일까요?",
+        imageUrl: "",
+        options: ["다시입력", "상세보기", "다시입력"],
+        correctOption: 1
+      },
       {
         question: "다음화면에서 주민등록등본을 출력하려면 눌러야하는 곳은 어디일까요?",
         imageUrl: "images/q6.jpg",
