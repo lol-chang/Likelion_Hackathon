@@ -1,10 +1,54 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Main</title>
+    <title>고민그잡채</title>
+    <link rel="stylesheet" href="main.css">
+    <script>
+        function showMsg() {
+            alert("퀴즈를 통과하셔야 수료증이 발급됩니다!");
+        }
+</script>
+
 </head>
 <body>
-    session 값 확인: <p th:text="${session.loginId}"></p>
+<header>
+    <h1>고민그잡채</h1>
+    <nav class="menu">
+        <a href="/login">로그인</a>
+        <a href="/resister">회원가입</a>
+        <a href="/lecture">강의</a>
+        <a href="/quiz">퀴즈</a>
+        <a href="#" onclick="showMsg(); return false;">수료증</a>
+
+    </nav>
+</header>
+<div class="container2">
+    <br>
+    <br>
+    <h2>인터넷 소외자들의 교육을 책임지는 서비스</h2>
+    <br>
+    <h3>로그인 후 사용해야 합니다.</h3>
+    <br>
+    <h3>퀴즈 통과시 수료증 제공</h3>
+</div>
+
+<div class="container">
+    <div class="quarter quarter0">
+        <a href="/login" class="text">로그인</a>
+    </div>
+    <div class="quarter quarter1">
+        <a href="/resister" class="text">가입</a>
+    </div>
+    <div class="quarter quarter2">
+        <a href="/lecture" class="text">강의</a>
+    </div>
+    <div class="quarter quarter3">
+        <a href="/quiz" class="text">퀴즈</a>
+    </div>
+    <div class="quarter quarter3">
+        <a href="#" onclick="showMsg(); return false;" class="text">수료증</a>
+    </div>
+</div>
 </body>
 </html>

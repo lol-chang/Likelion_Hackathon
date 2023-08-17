@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>동영상 강의</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding-top: 60px;
+        }
+        .video-container {
+            display: none; /* 기본적으로 모든 동영상 숨김 */
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        video {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+        }
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ffcc00;
+        }
+        /* :target 선택자를 이용하여 동영상 섹션 보이기 */
+        .video-container:target {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="/main">메인 페이지</a>
+    <a href="#공공데이터">공공데이터</a>
+    <a href="#건강지도">건강지도</a>
+    <a href="#공공서비스">공공서비스</a>
+    <a href="#길찾기">길찾기</a>
+    <a href="#정부24">정부24</a>
+</nav>
+
+<h1>마우스를 위로 올려서</h1>
+<h1>듣고 싶은 강의를 클릭해주세요</h1>
+
+<div class="video-container" id="공공데이터">
+    <h2>공공데이터 사용법</h2>
+    <video controls>
+        <source src="/video/공공데이터.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<div class="video-container" id="건강지도">
+    <h2>건강지도 사용법</h2>
+    <video controls>
+        <source src="/video/건강지도.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<div class="video-container" id="공공서비스">
+    <h2>공공서비스 사용법</h2>
+    <video controls>
+        <source src="/video/공공서비스.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<div class="video-container" id="길찾기">
+    <h2>길찾기 사용법</h2>
+    <video controls>
+        <source src="/video/길찾기.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<div class="video-container" id="정부24">
+    <h2>정부24 사용법</h2>
+    <video controls>
+        <source src="/video/정부24.찐.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<script>
+    const nav = document.querySelector('nav');
+    const greeting = document.querySelector('h1');
+
+    // 스크롤 이벤트 리스너 추가
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > greeting.offsetHeight) {
+            nav.style.display = 'none';
+        } else {
+            nav.style.display = 'block';
+        }
+    });
+</script>
+
+</body>
+</html>
+
+
